@@ -240,13 +240,18 @@ def most_points_scored
 end
 
 def winning_team
-  summary_hash = {}
+  summary_arr = []
   
   game_hash.each do |team_name, about_team|
     if !summary_hash[:team_name]
-      summary_hash[:team_name] = {"points" => 0}
+      summary_hash[:team_name] = {points: 0}
     end
     
     about_team[:players].each do |player_name, stats|
+      summary_hash[:team_name][:points] += stats[:points]
+    end
+  end
+  
+  
       
 
