@@ -132,7 +132,7 @@ def game_hash
 end
 
 def num_points_scored(name)
-  points_scored = 0 
+  points_scored = 0
   
   game_hash.each do |team_name, about_team|
     about_team[:players].each do |player_name, stats|
@@ -227,16 +227,18 @@ end
 
 def most_points_scored
   most_points = 0 
+  most_points_name
   
   game_hash.each do |team_name, about_team|
     about_team[:players].each do |player_name, stats|
       if stats[:points] > most_points
         most_points = stats[:points]
+        most_points_name = player_name.to_s
       end
     end
   end
   
-  most_points
+  most_points_name
 end
 
 def winning_team
