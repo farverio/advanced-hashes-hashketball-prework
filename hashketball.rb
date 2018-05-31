@@ -290,7 +290,7 @@ def most_steals
     end
   end
   
-  most_steals
+  most_steals_name
 end
   
 def long_name_steals_a_ton?
