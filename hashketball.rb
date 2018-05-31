@@ -240,17 +240,43 @@ def most_points_scored
 end
 
 def winning_team
-  summary_arr = []
+  highest_points = 0
+  winning_team_name = ""
   
   game_hash.each do |team_name, about_team|
-    if !summary_hash[:team_name]
-      summary_hash[:team_name] = {points: 0}
-    end
+    total_points = 0
     
     about_team[:players].each do |player_name, stats|
-      summary_hash[:team_name][:points] += stats[:points]
+      total_points += stats[:points]
+    end
+    
+    if total_points > highest_points
+      highest_points = total_points
+      winning_team_name = team_name.to_s
     end
   end
+  
+  winning_team_name
+end
+
+def player_with_longest_name
+  longest_name_length = 0
+  longest_name = ""
+  
+  game_hash.each do |team_name, about_team|
+    about_team[:players].each do |player_name, stats|
+      if about_team[:player_name].length > longest_name_length
+        longest_name_length = about_team[:player_name].length
+        longest_name = player_name.to_s
+      end
+    end
+  end
+  
+  longest_name
+end
+
+def long_name_steals_a_ton?
+  
   
   
       
