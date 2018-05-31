@@ -163,7 +163,7 @@ def team_colors(input_team_name)
   team_colors = []
   
   game_hash.each do |team_type, about_team|
-    if input_team_name == team_type[:team_name].to_s
+    if input_team_name == about_team[:team_name].to_s
       about_team[:colors].each {|color| team_colors << color}
     end 
   end
