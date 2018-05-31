@@ -227,7 +227,7 @@ end
 
 def most_points_scored
   most_points = 0 
-  most_points_name
+  most_points_name = ""
   
   game_hash.each do |team_name, about_team|
     about_team[:players].each do |player_name, stats|
