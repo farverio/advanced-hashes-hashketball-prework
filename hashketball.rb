@@ -254,7 +254,7 @@ def winning_team
     
     if total_points > highest_points
       highest_points = total_points
-      winning_team_name = team_name.to_s
+      winning_team_name = about_team[:team_name].to_s
     end
   end
   
